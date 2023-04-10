@@ -4,11 +4,13 @@ import { Row, SegmentSeatMap } from "../types/IPlaneSeats";
 
 interface SeatRowProps {
     row: Row;
+    rowNumber: number;
 }
 
-const SeatRow: FC<SeatRowProps> = ({ row }) => {
+const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
     return (
         <div>
+            {rowNumber}:
             {row.seats.map((seat) => (
                 <div>{seat.seatLetter}</div>
             ))}

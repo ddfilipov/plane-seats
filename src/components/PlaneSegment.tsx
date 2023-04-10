@@ -11,7 +11,7 @@ const PlaneSegment: FC<PlaneSegmentProps> = ({ segment }) => {
     return (
         <div>
             {segment.rows.map((row) => (
-                <SeatRow row={row} />
+                <SeatRow row={row} rowNumber={row.rowNumber}/>
             ))}
         </div>
     );
