@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 const Plane: FC = () => {
-    return <></>;
+    return <>aaaaaaaaaaaaaaaaaaaaaa</>;
 };
 
 export default Plane;
