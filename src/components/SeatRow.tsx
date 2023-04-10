@@ -7,7 +7,13 @@ interface SeatRowProps {
 }
 
 const SeatRow: FC<SeatRowProps> = ({ row }) => {
-    return <div></div>;
+    return (
+        <div>
+            {row.seats.map((seat) => (
+                <div>{seat.seatLetter}</div>
+            ))}
+        </div>
+    );
 };
 
 export default SeatRow;
