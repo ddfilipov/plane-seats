@@ -1,4 +1,6 @@
-export const seats = {
+import { IPlaneSeats } from "../types/IPlaneSeats";
+
+export const seats: IPlaneSeats = {
     seatMap: {
         segmentSeatMaps: [
             {
