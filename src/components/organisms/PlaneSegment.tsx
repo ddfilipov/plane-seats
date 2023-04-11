@@ -16,9 +16,12 @@ const Container = styled.div`
 `;
 
 const PlaneSegment: FC<PlaneSegmentProps> = ({ segment }) => {
+    const seatLetters = segment.rows[0].seats.map((seat) => seat.seatLetter) ?? [];
+
     return (
         <Container>
             <h2>PLANE</h2>
+            <p>A ver ese seatLetters: {seatLetters}</p>
             {segment.rows.map((row) => (
                 <SeatRow row={row} rowNumber={row.rowNumber} key={row.rowNumber} />
             ))}
