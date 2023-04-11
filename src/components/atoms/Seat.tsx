@@ -4,7 +4,9 @@ import { Row, SegmentSeatMap } from "../../types/IPlaneSeats";
 import styled from "styled-components";
 import { ISeat } from "../../types/IPlaneSeats";
 
-interface SeatProps extends ISeat {}
+interface SeatProps extends ISeat {
+    rowNumber: number;
+}
 
 interface IAvailableSeat {
     isSeatAvailable: boolean;
@@ -26,13 +28,17 @@ const AilseWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    min-width: 20px;
+    color: #595c73;
 `;
 
-const Seat: FC<SeatProps> = ({ characteristics, price, seatKey: key, seatLetter, ailse }) => {
+const Seat: FC<SeatProps> = ({ characteristics, price, seatKey: key, seatLetter, ailse, rowNumber }) => {
     const seatPrice = price ? price.amount.toString() : "X";
-    return <SeatWrapper isSeatAvailable={price ? true : false}>{`${seatPrice}`}</SeatWrapper>;
+    return !ailse ? (
+        <SeatWrapper isSeatAvailable={price ? true : false}>{`${seatPrice}`}</SeatWrapper>
+    ) : (
+        <AilseWrapper>{rowNumber}</AilseWrapper>
+    );
 };
 
 export default Seat;

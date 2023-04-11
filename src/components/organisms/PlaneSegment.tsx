@@ -8,21 +8,21 @@ interface PlaneSegmentProps {
     segment: SegmentSeatMap;
 }
 
-// const Container = styled.div`
-//     display: flex;
-//     flex-direction: row;
-//     /* justify-content: center; */
-//     align-items: center;
-//     gap: 10px;
-// `;
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 10px;
+`;
 
 const PlaneSegment: FC<PlaneSegmentProps> = ({ segment }) => {
     return (
-        <div>
+        <Container>
+            <h2>PLANE</h2>
             {segment.rows.map((row) => (
                 <SeatRow row={row} rowNumber={row.rowNumber} key={row.rowNumber} />
             ))}
-        </div>
+        </Container>
     );
 };
 

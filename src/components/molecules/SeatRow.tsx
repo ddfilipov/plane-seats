@@ -18,7 +18,6 @@ const Container = styled.div`
 const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
     return (
         <Container>
-            {rowNumber}:
             {row.seats.map((seat) => (
                 <Seat
                     ailse={seat.ailse}
@@ -27,6 +26,7 @@ const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
                     price={seat.price}
                     seatLetter={seat.seatLetter}
                     key={seat.seatKey}
+                    rowNumber={rowNumber}
                 />
             ))}
         </Container>
