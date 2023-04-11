@@ -3,6 +3,7 @@ import { seats } from "../../data/plane-seats";
 import { SegmentSeatMap } from "../../types/IPlaneSeats";
 import SeatRow from "../molecules/SeatRow";
 import styled from "styled-components";
+import LetterRow from "../molecules/LetterRow";
 
 interface PlaneSegmentProps {
     segment: SegmentSeatMap;
@@ -16,12 +17,12 @@ const Container = styled.div`
 `;
 
 const PlaneSegment: FC<PlaneSegmentProps> = ({ segment }) => {
-    const seatLetters = segment.rows[0].seats.map((seat) => seat.seatLetter) ?? [];
+    const seatLetters = segment.rows[0].seats.map((seat) => seat.seatLetter);
 
     return (
         <Container>
             <h2>PLANE</h2>
-            <p>A ver ese seatLetters: {seatLetters}</p>
+            <LetterRow letters={seatLetters} />
             {segment.rows.map((row) => (
                 <SeatRow row={row} rowNumber={row.rowNumber} key={row.rowNumber} />
             ))}

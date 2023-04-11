@@ -15,9 +15,7 @@ const Container = styled.div`
     gap: 10px;
 `;
 
-const SeatRowWrapper = styled.div`
-    
-`
+const SeatRowWrapper = styled.div``;
 
 const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
     return (
