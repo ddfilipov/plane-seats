@@ -15,9 +15,14 @@ const Container = styled.div`
     gap: 10px;
 `;
 
+const SeatRowWrapper = styled.div`
+    
+`
+
 const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
     return (
         <Container>
+            {row.characteristics.includes("EXIT") ? <p>EXIT</p> : null}
             {row.seats.map((seat) => (
                 <Seat
                     ailse={seat.ailse}
@@ -29,6 +34,7 @@ const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
                     rowNumber={rowNumber}
                 />
             ))}
+            {row.characteristics.includes("EXIT") ? <p>EXIT</p> : null}
         </Container>
     );
 };
