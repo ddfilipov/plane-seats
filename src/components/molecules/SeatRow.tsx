@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { seats } from "../../data/plane-seats";
-import { Row, SegmentSeatMap } from "../../types/IPlaneSeats";
+import { Row } from "../../types/IPlaneSeats";
 import styled from "styled-components";
+import Seat from "../atoms/Seat";
 
 interface SeatRowProps {
     row: Row;
@@ -18,7 +18,13 @@ const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
         <Container>
             {rowNumber}:
             {row.seats.map((seat) => (
-                <div key={seat.key}>{seat.seatLetter}</div>
+                <Seat
+                    ailse={seat.ailse}
+                    characteristics={seat.characteristics}
+                    key={seat.key}
+                    price={seat.price}
+                    seatLetter={seat.seatLetter}
+                />
             ))}
         </Container>
     );

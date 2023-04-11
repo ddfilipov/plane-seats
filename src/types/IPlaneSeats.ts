@@ -14,11 +14,11 @@ export interface SegmentSeatMap {
 
 export interface Row {
     characteristics: string[];
-    seats: Seat[];
+    seats: ISeat[];
     rowNumber: number;
 }
 
-export interface Seat {
+export interface ISeat {
     characteristics: string[];
     price: Price | null;
     key: string;
