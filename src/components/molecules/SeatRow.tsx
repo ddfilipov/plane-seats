@@ -11,6 +11,8 @@ interface SeatRowProps {
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 10px;
 `;
 
 const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
@@ -21,9 +23,10 @@ const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
                 <Seat
                     ailse={seat.ailse}
                     characteristics={seat.characteristics}
-                    key={seat.key}
+                    seatKey={seat.seatKey}
                     price={seat.price}
                     seatLetter={seat.seatLetter}
+                    key={seat.seatKey}
                 />
             ))}
         </Container>

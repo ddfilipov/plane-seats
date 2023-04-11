@@ -21,7 +21,7 @@ export interface Row {
 export interface ISeat {
     characteristics: string[];
     price: Price | null;
-    key: string;
+    seatKey: string;
     seatLetter: string | null;
     ailse: boolean;
 }
