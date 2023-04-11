@@ -33,7 +33,7 @@ const AilseWrapper = styled.div`
 `;
 
 const Seat: FC<SeatProps> = ({ characteristics, price, seatKey: key, seatLetter, ailse, rowNumber }) => {
-    const seatPrice = price ? price.amount.toString() : "X";
+    const seatPrice = price ? `${price.amount.toString()}€` : "X";
     return !ailse ? (
         <SeatWrapper isSeatAvailable={price ? true : false}>{`${seatPrice}`}</SeatWrapper>
     ) : (
