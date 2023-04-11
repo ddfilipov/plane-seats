@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { seats } from "../data/plane-seats";
-import { Row, SegmentSeatMap } from "../types/IPlaneSeats";
+import { seats } from "../../data/plane-seats";
+import { Row, SegmentSeatMap } from "../../types/IPlaneSeats";
 import styled from "styled-components";
 
 interface SeatRowProps {
