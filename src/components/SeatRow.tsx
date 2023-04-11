@@ -18,7 +18,7 @@ const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
         <Container>
             {rowNumber}:
             {row.seats.map((seat) => (
-                <div>{seat.seatLetter}</div>
+                <div key={seat.key}>{seat.seatLetter}</div>
             ))}
         </Container>
     );

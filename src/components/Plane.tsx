@@ -6,7 +6,7 @@ const Plane: FC = () => {
     return (
         <div>
             {seats.seatMap.segmentSeatMaps.map((segment) => (
-                <PlaneSegment segment={segment} />
+                <PlaneSegment segment={segment} key={segment.segmentKey} />
             ))}
         </div>
     );
