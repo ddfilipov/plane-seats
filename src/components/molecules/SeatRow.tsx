@@ -15,23 +15,29 @@ const Container = styled.div`
     gap: 10px;
 `;
 
-const SeatRowWrapper = styled.div``;
+const SeatRowWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+`;
 
 const SeatRow: FC<SeatRowProps> = ({ row, rowNumber }) => {
     return (
         <Container>
             {row.characteristics.includes("EXIT") ? <p>EXIT</p> : null}
-            {row.seats.map((seat) => (
-                <Seat
-                    ailse={seat.ailse}
-                    characteristics={seat.characteristics}
-                    seatKey={seat.seatKey}
-                    price={seat.price}
-                    seatLetter={seat.seatLetter}
-                    key={seat.seatKey}
-                    rowNumber={rowNumber}
-                />
-            ))}
+            {/* <SeatRowWrapper> */}
+                {row.seats.map((seat) => (
+                    <Seat
+                        ailse={seat.ailse}
+                        characteristics={seat.characteristics}
+                        seatKey={seat.seatKey}
+                        price={seat.price}
+                        seatLetter={seat.seatLetter}
+                        key={seat.seatKey}
+                        rowNumber={rowNumber}
+                    />
+                ))}
+            {/* </SeatRowWrapper> */}
             {row.characteristics.includes("EXIT") ? <p>EXIT</p> : null}
         </Container>
     );
