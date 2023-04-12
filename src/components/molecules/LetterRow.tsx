@@ -35,8 +35,12 @@ const SeatRowWrapper = styled.div``;
 const LetterRow: FC<LetterRowProps> = ({ letters }) => {
     return (
         <Container>
-            {letters.map((letter) => {
-                return letter ? <LetterWrapper>{letter}</LetterWrapper> : <EmptyLetter></EmptyLetter>;
+            {letters.map((letter, index) => {
+                return letter ? (
+                    <LetterWrapper key={letter}>{letter}</LetterWrapper>
+                ) : (
+                    <EmptyLetter key={index}></EmptyLetter>
+                );
             })}
         </Container>
     );
